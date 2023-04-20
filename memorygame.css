@@ -1,0 +1,99 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    display:grid;
+    height: 100vh;
+    background-color: #A4BC92;
+}
+
+.heading{
+    display:grid;
+    justify-content: center;
+    background-color: #C7E9B0;
+    color:
+    #40513B;
+    align-items: center;
+    border-radius: 2em 2em 0 0 ;
+}
+.start{
+    display:none;
+    background-color: #DDFFBB;
+    color: 
+    #40513B;
+    width: 40em;
+    gap: 2em;
+    border-radius: 2em;
+}
+
+.result{
+    display: none;
+    width: 30em;
+    height: 25em;
+    margin: 2em;
+    background-color: #DDFFBB;
+}
+.game{
+    display: grid;
+    background-color: #DDFFBB;
+}
+.pics{
+    width: 5em;
+    height: 5em;
+    display: none;
+}
+.flipcard{
+    background-color: #A4BC92;
+    margin: 3px;
+    width: 7em;
+    height: 7em;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+}
+
+.footer {
+    display: grid;
+    justify-content: center;
+}
+.button {
+    background-color: #A4BC92;
+    border-radius: 100px;
+    color:  #DDFFBB;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    margin: 0.5em;
+    margin-bottom: 2em;
+    touch-action: manipulation;
+  }
+  
+  .button:hover {
+    
+    transform: scale(1.05) rotate(-1deg);
+  }
+
+.instructions{
+    padding-left: 2em;
+}
+#restart{
+    height: 2em;
+    align-items: center;
+}
+
+.displaynone{
+    display: block;
+}
