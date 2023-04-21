@@ -22,7 +22,7 @@ body{
     border-radius: 2em 2em 0 0 ;
 }
 .start{
-    display:none;
+    display:grid;
     background-color: #DDFFBB;
     color: 
     #40513B;
@@ -34,12 +34,14 @@ body{
 .result{
     display: none;
     width: 30em;
-    height: 25em;
+    height: 16em;
     margin: 2em;
     background-color: #DDFFBB;
+    border-radius: 2em;
+    
 }
 .game{
-    display: grid;
+    display: none;
     background-color: #DDFFBB;
 }
 .pics{

@@ -16,22 +16,26 @@
 
 <body>
 
-    <div class="start">
+    <div class="start" id="start">
         <div class="heading">
             <h2>Memory game</h1>
         </div>
         <div class="instructions">
-            <h3>instructions</h3>
+            <h3>Instructions</h3>
             <h4>1. Total there are 8 pairs of images </h4><br>
             <h4>2. You can view only two images at a time</h4><br>
             <h4>3. There is no time limit </h4><br>
         </div>
         <div class="footer">
 
-            <button class="button" id="start">START GAME</button>
+            <button class="button" id="start" onclick="start()">START GAME</button>
         </div>
     </div>
-    <div class="game container">
+    <div class="game container" id="game">
+        <div class="row">
+            <h4>Time: <span id="time"></span>sec</h4>
+            <h4>Moves: <span id="movee"></span></h4>
+        </div>
          <div class="row">
         <div class="col-3 flipcard "id = "flip1"onclick="flipImage(1)">
                 <img class="pics" src="img/cat.png" alt="">
@@ -88,19 +92,20 @@
                 <img class="pics" src="img/rainbow.png" alt="">
             </div>
         </div>
+        <div class="col-12 d-flex justify-content-center">
+            <button class="button
+            " onclick="end()">Exit game</button>
+        </div>
     </div>
-    <div class="result">
+    <div class="result" id="result">
         <div class="instructions">
             <h4>Congrulations for completing game</h4><br>
-            <h5>Time taken : </h5><br>
-            <h5>Total Moves :</h5>
+            <h5>Time taken :<span id = "timetaken"></span> sec</h5><br>
+            <h5>Total Moves :<span id="move"></span></h5>
         </div>
-
-        <div class="cong">
-            <img id = "clap "src="img/clap.png" alt="">
-        </div>
-        <div class="footer">
-            <button class="button" id="restart">RESTART</button>
+       
+        <div class="col-12 d-flex justify-content-center">
+            <button class="button" id="restart" onclick="restart() ">RESTART</button>
         </div>
 
     </div>
