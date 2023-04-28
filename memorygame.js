@@ -1,70 +1,73 @@
-let timer = 0;
-let myVar;
-let tym;
-let moves = 0;
-// $(".pics").css("display","none")
-prev = null
-present = null
-
-function flipImage(num){
-    moves++   
-    current =  $("#flip"+num).children().eq(0).toggleClass("displaynone");
-    
-     b = $("#flip"+num).children()[0].src;
-     console.log(b)
-     
+let prevId = "";
+let currentId = "";
+let points = 0;
+let moves = 0
+let counter = 0
+function start(){
+  timer = 0
+  moves = 0
+  $("#start").css("display","none")
+  $("#cards").css("display","grid")
+  myVar  = setInterval(myTimer, 1000);
+  document.getElementById("movee").innerHTML = moves
+  document.getElementById("points").innerHTML = points
 }
-
 function myTimer() {
   tym = timer++
-  console.log(timer)
   document.getElementById("time").innerHTML = tym;
 }
-function start(){
-    timer = 0
-    moves = 0
-    $("#start").css("display","none")
-    $("#game").css("display","grid")
-    myVar  = setInterval(myTimer, 1000);
-    document.getElementById("movee").innerHTML = moves
-}
 function end(){
-    $("#game").css("display","none")
-    $("#result").css("display","grid")
-    clearInterval(myVar)
-    document.getElementById("timetaken").innerHTML = tym;
-    
-    
+  $("#cards").css("display","none")
+  $("#result").css("display","grid")
+  clearInterval(myVar)
+  document.getElementById("timetaken").innerHTML = tym;
+  document.getElementById("move").innerHTML = moves
+  document.getElementById("point").innerHTML = points 
+  
 }
 function restart(){
-    $("#result").css("display","none")
-    $("#start").css("display","grid")
-    
+  $("#result").css("display","none")
+  $("#start").css("display","grid")
+  location.reload();
 }
-// $(document).ready(function(){
-//     var clickedimg1 = null
-//     var clickedimg2 = null
+const cards = document.querySelectorAll(".cards .card");
+cards.forEach((card) => {
+  card.addEventListener("click", () => {
+    moves++
+    document.getElementById("movee").innerHTML = moves
+    card.classList.add("clicked");
 
+    if (counter === 0) {
+      firstSelection = card.getAttribute("animal");
+      counter++;
+    } else {
+      secondSelection = card.getAttribute("animal");
+      counter = 0;
 
-// $(".flipcard").click(function(){
-    
-//     var clickedImg =$(this).find(".pics")
+      if (firstSelection === secondSelection) {
+        points++
+        document.getElementById("points").innerHTML = points
+        const correctCards = document.querySelectorAll(
+          ".card[animal='" + firstSelection + "']"
+        );
 
-//     if(clickedimg1 && clickedimg2){
-//         clickedimg1.removeClass("displaynone")
-//         clickedimg2.removeClass("displaynone")
-//         clickedDiv1 = null;
-//         clickedDiv2 = null;
-//     }
-//     else if(!clickedimg1)
-//     {
-//         clickedimg1 = clickedImg
-//         clickedimg1.addClass("displaynone")
-//     }
-//     else if(!clickedimg2){
-//         clickedimg2 = clickedImg
-//         clickedimg2.addClass("displaynone")
-//     }
-// });
+        correctCards[0].classList.add("checked");
+        correctCards[0].classList.remove("clicked");
+        correctCards[1].classList.add("checked");
+        correctCards[1].classList.remove("clicked");
+        console.log(correctCards)
+        if(points==8){
+            end()
+        }
+      } else {
+        const incorrectCards = document.querySelectorAll(".card.clicked");
 
-// })
+        setTimeout(() => {
+
+          incorrectCards[0].classList.remove("clicked");
+          incorrectCards[1].classList.remove("clicked");
+        }, 700);
+      }
+    }
+  });
+});

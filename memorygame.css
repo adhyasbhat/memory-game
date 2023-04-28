@@ -1,101 +1,121 @@
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    justify-items: center;
-    display:grid;
-    height: 100vh;
-    background-color: #A4BC92;
+.container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
 }
-
-.heading{
-    display:grid;
-    justify-content: center;
-    background-color: #C7E9B0;
-    color:
-    #40513B;
-    align-items: center;
-    border-radius: 2em 2em 0 0 ;
+.heading {
+  display: grid;
+  justify-content: center;
+  background-color: #c7e9b0;
+  color: #40513b;
+  align-items: center;
+  border-radius: 2em 2em 0 0;
 }
-.start{
-    display:grid;
-    background-color: #DDFFBB;
-    color: 
-    #40513B;
-    width: 40em;
-    gap: 2em;
-    border-radius: 2em;
+.start {
+  display: grid;
+  background-color: #ddffbb;
+  color: #40513b;
+  width: 40em;
+  gap: 2em;
+  border-radius: 2em;
 }
-
-.result{
-    display: none;
-    width: 30em;
-    height: 16em;
-    margin: 2em;
-    background-color: #DDFFBB;
-    border-radius: 2em;
-    
-}
-.game{
-    display: none;
-    background-color: #DDFFBB;
-}
-.pics{
-    width: 5em;
-    height: 5em;
-    display: none;
-}
-.flipcard{
-    background-color: #A4BC92;
-    margin: 3px;
-    width: 7em;
-    height: 7em;
-    align-items: center;
-    justify-content: center;
-    display: grid;
-}
-
 .footer {
-    display: grid;
-    justify-content: center;
+  display: grid;
+  justify-content: center;
 }
 .button {
-    background-color: #A4BC92;
-    border-radius: 100px;
-    color:  #DDFFBB;
-    cursor: pointer;
-    display: inline-block;
-    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-    padding: 7px 20px;
-    text-align: center;
-    text-decoration: none;
-    transition: all 250ms;
-    border: 0;
-    font-size: 16px;
-    user-select: none;
-    -webkit-user-select: none;
-    margin: 0.5em;
-    margin-bottom: 2em;
-    touch-action: manipulation;
-  }
-  
-  .button:hover {
-    
-    transform: scale(1.05) rotate(-1deg);
-  }
-
-.instructions{
-    padding-left: 2em;
+  background-color: #a4bc92;
+  border-radius: 100px;
+  color: #ddffbb;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  margin: 0.5em;
+  margin-bottom: 2em;
+  touch-action: manipulation;
 }
-#restart{
-    height: 2em;
-    align-items: center;
+.button:hover {
+  transform: scale(1.05) rotate(-1deg);
 }
-
-.displaynone{
-    display: block;
+.instructions
+{
+  padding-left: 2em;
+}
+#restart {
+  height: 2em;
+  align-items: center;
+}
+.details {
+  gap: 2em;
+}
+.cards {
+  display: none;
+  width: 30em;
+  height: 38em;
+  gap: 1em;
+  border: none;
+  padding: 1em;
+  justify-content: center;
+  background-color: #ddffbb;
+  border-radius: 2em;
+}
+body 
+{
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  display: grid;
+  height: 100vh;
+  background-color: #a4bc92;
+}
+.card {
+  margin: 3px;
+  width: 6em;
+  height: 6em;
+  background-color: #a4bc92;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+.card:hover {
+  transform: scale(1.03);
+}
+.card img {
+  width: 132%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.3s all ease;
+}
+.card.clicked {
+  background-color: orange;
+}
+.card.clicked img,
+.card.checked img {
+  opacity: 1;
+}
+.result {
+  display: none;
+  width: 30em;
+  height: 16em;
+  margin: 2em;
+  background-color: #ddffbb;
+  border-radius: 2em;
 }
